@@ -1,24 +1,24 @@
-const assert = require("assert");
-const suit = require("../models/suit");
-const rank = require("../models/rank");
-const Card = require("../models/Card");
+const assert = require('assert');
+const Suit = require('../models/suit');
+const Rank = require('../models/rank');
+const Card = require('../models/card');
 
-describe("Card", function () {
+describe('Card', () => {
   let card1;
 
-  beforeEach(function () {
-    card1 = new Card(suit.DIAMONDS, rank.JACK);
+  beforeEach(() => {
+    card1 = new Card(Suit.DIAMONDS, Rank.JACK);
   });
 
-  it("card can get suit", function () {
+  it('card can get suit', () => {
     const actual = card1.suit;
-    assert.strictEqual(actual, suit.DIAMONDS);
+    assert.strictEqual(actual, Suit.DIAMONDS);
   });
 
-  it("card can get rank", function () {
+  it('card can get rank', () => {
     const actual = card1.rank;
-    assert.strictEqual(actual, rank.JACK);
-    assert.strictEqual(actual.name, "JACK");
+    assert.strictEqual(actual, Rank.JACK);
+    assert.strictEqual(actual.name, 'JACK');
     assert.strictEqual(actual.value, 10);
   });
 });
