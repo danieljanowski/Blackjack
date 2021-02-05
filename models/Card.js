@@ -12,3 +12,5 @@ class Card {
     return this._rank;
   }
 }
+
+module.exports = Card;
