@@ -27,4 +27,16 @@ describe('Deck', () => {
     const actualFirstCardAfter = deck1.firstCard();
     assert.notDeepStrictEqual(actualFirstCard, actualFirstCardAfter);
   });
+
+  it('deck is able to deal the card', () => {
+    deck1.populateCards();
+    deck1.shuffleCards();
+    const actual = deck1.countCards();
+    assert.strictEqual(actual, 4 * 13);
+    const FirstCard = deck1.firstCard();
+    const dealtFirstCard = deck1.dealCard();
+    assert.strictEqual(FirstCard, dealtFirstCard);
+    const actual2 = deck1.countCards();
+    assert.strictEqual(actual2, 4 * 13 - 1);
+  });
 });

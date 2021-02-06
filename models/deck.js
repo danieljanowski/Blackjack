@@ -12,7 +12,6 @@ class Deck {
         this._cardDeck.push(newCard);
       }
     }
-    // console.log(this._cardDeck);
   }
 
   firstCard() {
@@ -25,6 +24,10 @@ class Deck {
 
   countCards() {
     return this._cardDeck.length;
+  }
+
+  dealCard() {
+    return this._cardDeck.shift();
   }
 }
 
